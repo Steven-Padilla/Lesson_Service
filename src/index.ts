@@ -1,6 +1,6 @@
 import express from 'express';
 import { config } from './config';
-import { lessonRouter } from './course/infrastructure/CourseRouter';
+import { lessonRouter } from './Lesson/infrastructure/CourseRouter';
 import * as bodyParser from 'body-parser'
 const { port } = config.server;
 const app = express();
