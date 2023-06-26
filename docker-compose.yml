@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  lesson-service_v1:
+    image: stevenpadilla/lesson_service
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    volumes:
+      - ./src:/app/src
+      - ./nodemon.json:/app/nodemon.json
+    container_name: lesson-service
+    expose:
+      - '1709'
+    ports:
+      - '1709:1709'
+    command: node dist/src/index.js
