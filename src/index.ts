@@ -7,7 +7,7 @@ const app = express();
 
 
 app.use(bodyParser.json());
-app.use("/lesson/", lessonRouter)
+app.use("/api/v1/", lessonRouter)
 app.listen(port, () => {
     console.log(`[APP] - Starting application on port ${port}`);
 });
