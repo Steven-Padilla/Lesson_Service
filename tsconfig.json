@@ -16,7 +16,7 @@
     },
     "include": [
         "src/*"
-    ],
+, "src/Lesson/config/config.ts"    ],
     "exclude": [
         "node_modules"
     ]

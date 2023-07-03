@@ -1,22 +1,26 @@
 import { Sequelize } from "sequelize";
 
-import { config } from '../../../config';
-const { db_host='', db_name='', db_password='', db_user='' } = config.db;
+import { config } from "../../config/config";
+const {
+  db_host = "",
+  db_name = "",
+  db_password = "",
+  db_user = "",
+} = config.db;
 
 export const postgresConnection = new Sequelize(db_name, db_user, db_password, {
-    host: db_host,
-    dialect: 'postgres'
+  host: db_host,
+  dialect: "postgres",
 });
-async function test (){
-    try {
-        // Uncomment the following line just once at the beginning
-        // postgresConnection.sync({alter:true});
-        await postgresConnection.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (error) {
-        
-        console.error('Unable to connect to the database:');
-        throw new Error(`Unable to connect to the database ${error}`);
-    }
+async function test() {
+  try {
+    // Uncomment the following line just once at the beginning
+    // postgresConnection.sync({alter:true});
+    await postgresConnection.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:");
+    throw new Error(`Unable to connect to the database ${error}`);
+  }
 }
 test();
