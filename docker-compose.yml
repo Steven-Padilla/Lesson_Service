@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   lesson-service_v1:
-    image: stevenpadilla/lesson_service:1.1.0
+    image: stevenpadilla/lesson_service:1.2.0
     build:
       context: .
       dockerfile: Dockerfile
