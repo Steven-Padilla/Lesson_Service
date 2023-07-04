@@ -2,15 +2,14 @@ version: '3.7'
 
 services:
   lesson-service_v1:
-    image: stevenpadilla/lesson_service:1.2.0
+    image: stevenpadilla/lesson_service:1.3.0
     build:
       context: .
       dockerfile: Dockerfile
       target: production
-    volumes:
-      - ./src:/app/src
-      - ./nodemon.json:/app/nodemon.json
     container_name: lesson-service
+    env_file:
+      - .env
     expose:
       - '1709'
     ports:

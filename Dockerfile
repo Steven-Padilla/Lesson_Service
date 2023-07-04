@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:18-alpine AS production
 
 WORKDIR /app
 
@@ -6,10 +6,6 @@ COPY package*.json ./
 
 RUN npm i
 
-COPY . .
+RUN mkdir dist
 
-FROM base AS production
-
-# ENV NODE_PATH=./dist
-
-RUN npm run build
+COPY ./dist dist/
